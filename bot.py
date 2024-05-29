@@ -88,11 +88,6 @@ async def say_hi(interaction: discord.Interaction):
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
-bot = BookBot(command_prefix='$', intents=intents)
-
-# Register commands
-@bot.command(name='bookInfo')
-async def book_info(ctx, *args):
-    await bot.book_info(ctx, *args)
+bot = BookBot(intents=intents)
 
 bot.run(DISCORD_BOT_TOKEN)
